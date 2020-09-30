@@ -1,10 +1,14 @@
 import axios from "axios";
 
-const GET_ALL_EMPLOYEES_API = "http://localhost:8080/api/v1/employees";
+const EMPLOYEES_API_BASE_URL = "http://localhost:8080/api/v1/employees";
 
 class EmployeeService {
   getEmployees() {
-    return axios.get(GET_ALL_EMPLOYEES_API);
+    return axios.get(EMPLOYEES_API_BASE_URL);
+  }
+
+  createEmployee(employee) {
+    return axios.post(EMPLOYEES_API_BASE_URL, employee);
   }
 }
 
